@@ -40,7 +40,7 @@
     });
   });
   var SF='https://splitforms.com/api/submit';
-  var SUMATE_KEY=''; // clave de SplitForms del formulario «Sumate a TEKOHA»
+  var SUMATE_KEY='28ae80e7fdb540c5a15655d8b5a0ff84'; // clave de SplitForms del formulario «Sumate a TEKOHA»
   function txt(el){
     if(!el.tagName){return [].filter.call(el,function(x){return x.checked;}).map(function(x){return x.value;}).join(', ');}
     if(el.type==='checkbox') return el.checked?el.value:'';
