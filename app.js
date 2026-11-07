@@ -46,6 +46,11 @@
     if(el.type==='checkbox') return el.checked?el.value:'';
     return el.tagName==='SELECT'?el.options[el.selectedIndex].text:el.value.trim();
   }
+  function fail(pre,why){
+    var el=document.getElementById(pre+'-fail'); el.hidden=false;
+    var d=el.querySelector('.why'); if(!d){d=document.createElement('small');d.className='why';d.style.cssText='display:block;margin-top:6px;opacity:.75';el.appendChild(d);}
+    d.textContent='Detalle técnico: '+why;
+  }
   function wire(id,pre,key,subject,labels,valid){
     var form=document.getElementById(id); if(!form) return;
     var btn=form.querySelector('button[type=submit]');
@@ -58,17 +63,17 @@
       if(!ok) return;
       var body={access_key:key,subject:subject,from_name:'Web Victoria Marichal',botcheck:form.botcheck.value};
       Object.keys(labels).forEach(function(n){var el=form.elements[n]; if(el) body[labels[n]]=txt(el);});
-      if(!key){document.getElementById(pre+'-fail').hidden=false; return;}
+      if(!key){fail(pre,'falta la clave del formulario'); return;}
       var c=(form.elements.contacto&&form.elements.contacto.value.trim())||(form.elements.mail&&form.elements.mail.value.trim());
       if(c&&c.indexOf('@')>0) body.replyto=c;
       var old=btn.textContent; btn.disabled=true; btn.textContent='Enviando…';
       fetch(SF,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(body)})
-        .then(function(r){return r.json().catch(function(){return {success:false};});})
+        .then(function(r){return r.json().catch(function(){return {success:false,message:'error '+r.status};});})
         .then(function(d){
           if(d&&d.success){form.reset();document.getElementById(pre+'-done').hidden=false;}
-          else document.getElementById(pre+'-fail').hidden=false;
+          else fail(pre,(d&&d.message)||'respuesta sin éxito');
         })
-        .catch(function(){document.getElementById(pre+'-fail').hidden=false;})
+        .catch(function(err){fail(pre,'sin conexión con el servicio'+(err&&err.message?' ('+err.message+')':''));})
         .then(function(){btn.disabled=false;btn.textContent=old;});
     });
   }

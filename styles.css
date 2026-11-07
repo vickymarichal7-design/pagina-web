@@ -346,3 +346,4 @@ nav a[aria-current="page"]{border-color:var(--magenta);color:var(--magenta)}
 .p-book{font-family:var(--f-mono);font-weight:var(--mono-w);font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:#22102C;text-decoration:none;border-bottom:2px solid #B94A0E;justify-self:start;margin-top:4px}
 .p-book:hover{color:#B94A0E}
 .chip-off{background:#E4DCE0;border-color:#B8A9B1!important;color:#5A4A52}
+.p-quote{font-family:var(--f-display);font-size:1.15rem!important;line-height:1.25;color:#4A1A78!important}
