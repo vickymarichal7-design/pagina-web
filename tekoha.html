@@ -246,10 +246,11 @@
     <div role="tabpanel" id="p-equipo" aria-labelledby="t-equipo" hidden>
       <div class="team">
         <article class="person">
+          <span class="sup-badge">Coordinación general</span>
           <img class="avatar avatar-img" src="img/avatar-vm.jpg" alt="Victoria Marichal">
           <div class="p-name"><h3>Victoria Marichal</h3><span class="pron">ella/she</span></div>
-          <span class="p-role">Lic. en Psicología · Magíster en Género · Coordinación</span>
-          <p>Psicotraumatología y EMDR. Violencias sexuales, violencia basada en género, sexualidad, diversidad sexual y corporal.</p>
+          <span class="p-role">Lic. en Psicología · Magíster en Género, orientación VBG · Terapeuta EMDR</span>
+          <p>Psicotraumatología y EMDR. Violencias sexuales, violencia basada en género, sexualidad, no monogamias, diversidad sexual y corporal.</p>
           <div class="meta"><span class="chip">Adultxs y parejas</span><span class="chip">Presencial y virtual</span><span class="chip chip-off">Agenda cerrada</span></div>
           <p class="p-place">Presencial en la zona de Nuevocentro.</p>
         </article>
@@ -269,6 +270,22 @@
           <p>Psicoanálisis vincular y EMDR. Violencia basada en género, violencia sexual, problemáticas vinculares y diversidad sexo-genérica.</p>
           <div class="meta"><span class="chip">Adolescentes y adultxs jóvenes</span><span class="chip">Presencial y virtual</span><span class="chip chip-off">Sin agenda hasta diciembre</span></div>
           <p class="p-place">Presencial en Parque Batlle / Pocitos.</p>
+        </article>
+        <article class="person person-sup">
+          <span class="sup-badge">Supervisora EMDR · Covisión TEKOHA</span>
+          <img class="avatar avatar-img" src="img/avatar-lucia.jpg" alt="Lucía Vitancurt">
+          <div class="p-name"><h3>Lucía Vitancurt</h3><span class="pron">ella</span></div>
+          <span class="p-role">Lic. en Psicología · Maestranda en terapias de tercera generación</span>
+          <p>Posgrado en Psicotraumatología.</p>
+          <p>Trauma complejo, TEPT, violencia basada en género, diversidad sexual y duelos.</p>
+          <p><b>Co-coordina los espacios de covisión de TEKOHA.</b></p>
+          <div class="meta"><span class="chip">Jóvenes y adultxs</span><span class="chip">Presencial y virtual</span></div>
+          <dl class="avail">
+            <div><dt>Psicoterapia</dt><dd><span class="chip chip-off">Agenda cerrada</span></dd></div>
+            <div><dt>Supervisión</dt><dd><span class="chip chip-ok">Agenda abierta</span></dd></div>
+          </dl>
+          <p class="p-place">Presencial en Pocitos.</p>
+          <a class="p-book" href="#supervision">Solicitar supervisión →</a>
         </article>
       </div>
       <a class="sumate-cta" href="#sumate" data-tab="t-sumate"><span class="label">Convocatoria abierta</span><b>¿Sos psi y querés sumarte al equipo?</b><span>Postulate acá →</span></a>
@@ -293,6 +310,30 @@
           <div class="full"><button class="btn solid" type="submit">Enviar solicitud</button></div>
           <div class="ok" id="f-done" hidden role="status"><b>¡Gracias!</b> Recibimos tu mensaje y te vamos a escribir a la brevedad.</div>
           <div class="err full" id="f-fail" hidden role="alert">No pudimos enviar el formulario. Probá de nuevo en un rato o escribinos directo a licpsi.vicmarichal@gmail.com.</div>
+        </form>
+      </div>
+      <div class="form-box" id="supervision" style="margin-top:40px">
+        <div style="display:grid;gap:14px;align-content:start">
+          <span class="label">Para profesionales</span>
+          <h3 style="font-size:clamp(1.8rem,4vw,2.6rem);font-weight:var(--w-display)">Solicitar supervisión EMDR</h3>
+          <p class="note">Supervisión clínica con Lucía Vitancurt, supervisora EMDR. Contanos un poco sobre vos y te escribimos para coordinar.</p>
+        </div>
+        <form id="sup-form" novalidate>
+          <input type="text" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+          <div class="field"><label for="sup-nombre">Nombre</label><input id="sup-nombre" name="nombre" autocomplete="name" required></div>
+          <div class="field"><label for="sup-contacto">Mail o WhatsApp</label><input id="sup-contacto" name="contacto" required></div>
+          <div class="field"><label for="sup-prof">Profesión</label><input id="sup-prof" name="prof" placeholder="Ej.: Lic. en Psicología"></div>
+          <div class="field"><label for="sup-emdr">Formación en EMDR</label>
+            <select id="sup-emdr" name="emdr"><option>Nivel 1</option><option>Nivel 2</option><option>Formación completa</option><option>En formación para certificar</option><option>Otra</option></select></div>
+          <div class="field"><label for="sup-tipo">Modalidad de supervisión</label>
+            <select id="sup-tipo" name="tipo"><option>Individual</option><option>Grupal</option><option>Indistinto</option></select></div>
+          <div class="field"><label for="sup-modo">Presencial o virtual</label>
+            <select id="sup-modo" name="modo"><option>Indistinto</option><option>Presencial</option><option>Virtual</option></select></div>
+          <div class="field full"><label for="sup-msg">¿Qué te gustaría trabajar? (opcional)</label><textarea id="sup-msg" name="msg" placeholder="Sin datos que identifiquen a consultantes."></textarea></div>
+          <p class="err full" id="sup-err" hidden>Completá tu nombre y un medio de contacto.</p>
+          <div class="full"><button class="btn solid" type="submit">Enviar solicitud</button></div>
+          <div class="ok" id="sup-done" hidden role="status"><b>¡Gracias!</b> Recibimos tu solicitud y te vamos a escribir para coordinar.</div>
+          <div class="err full" id="sup-fail" hidden role="alert">No pudimos enviar el formulario. Probá de nuevo en un rato o escribinos directo a licpsi.vicmarichal@gmail.com.</div>
         </form>
       </div>
     </div>

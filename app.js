@@ -21,7 +21,7 @@
   });
   // Abrir la pestaña que corresponde al link (#talleres, #agendar, #sumate...)
   var HASHTAB={cursos:'t-cursos',formaciones:'t-cursos','cursos-form':'t-cursos','edicion-vs':'t-cursos',
-    talleres:'t-talleres','taller-form':'t-talleres',equipo:'t-equipo',agendar:'t-equipo',sumate:'t-sumate'};
+    talleres:'t-talleres','taller-form':'t-talleres',equipo:'t-equipo',agendar:'t-equipo',supervision:'t-equipo',sumate:'t-sumate'};
   function fromHash(){
     var h=(location.hash||'').slice(1); var id=HASHTAB[h]; if(!id) return;
     show(document.getElementById(id),true);
@@ -80,6 +80,9 @@
   wire('agenda-form','f','61aa27133a2e4b7fb2e958afae502466','Nueva solicitud de consulta psicoterapéutica',
     {nombre:'Nombre',contacto:'Mail o WhatsApp',psi:'Psicóloga',modo:'Modalidad',motivo:'Motivo de consulta'},
     function(f){return f.nombre.value.trim()&&f.contacto.value.trim()&&document.getElementById('f-ok').checked;});
+  wire('sup-form','sup','61aa27133a2e4b7fb2e958afae502466','Nueva solicitud de supervisión EMDR (Lucía Vitancurt)',
+    {nombre:'Nombre',contacto:'Mail o WhatsApp',prof:'Profesión',emdr:'Formación en EMDR',tipo:'Modalidad de supervisión',modo:'Presencial o virtual',msg:'Qué quiere trabajar'},
+    function(f){return f.nombre.value.trim()&&f.contacto.value.trim();});
   wire('t-form','t','beee97f61d5643c5ba4dd0d593f8fbf9','Nueva solicitud de taller, charla o capacitación',
     {nombre:'Nombre',org:'Institución u organización',contacto:'Mail o teléfono',tipo:'Tipo de propuesta',tema:'Tema',modo:'Modalidad',personas:'Cantidad de personas',fecha:'Fecha tentativa',msg:'Mensaje'},
     function(f){return f.nombre.value.trim()&&f.org.value.trim()&&f.contacto.value.trim();});

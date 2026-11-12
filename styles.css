@@ -347,3 +347,15 @@ nav a[aria-current="page"]{border-color:var(--magenta);color:var(--magenta)}
 .p-book:hover{color:#B94A0E}
 .chip-off{background:#E4DCE0;border-color:#B8A9B1!important;color:#5A4A52}
 .p-quote{font-family:var(--f-display);font-size:1.15rem!important;line-height:1.25;color:#4A1A78!important}
+
+/* Supervisión */
+.person-sup{position:relative;outline:3px solid #4A1A78;outline-offset:-3px}
+.sup-badge{justify-self:start;background:#4A1A78;color:#FFF6EE;font-family:var(--f-mono);font-weight:var(--mono-w);font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;padding:5px 10px}
+.avail{margin:0;display:grid;gap:6px}
+.avail div{display:flex;align-items:center;gap:10px}
+.avail dt{font-family:var(--f-mono);font-weight:var(--mono-w);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:#22102C;min-width:96px}
+.avail dd{margin:0}
+.team{grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr))}
+.avail .chip{white-space:nowrap}
+.person-sup .avatar{font-family:var(--f-display);font-size:2rem;color:var(--on-orange)}
+@media (min-width:760px){.team{grid-template-columns:repeat(2,minmax(0,1fr))}}
